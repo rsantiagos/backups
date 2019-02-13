@@ -9,9 +9,6 @@
         },
         {
           "text": "buenos dias"
-        },
-        {
-          "text": "como te llamas"
         }
       ],
       "description": "variable para detectar saludos"
