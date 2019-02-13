@@ -5,7 +5,7 @@
       "intent": "saludo",
       "examples": [
         {
-          "text": "que tal estas"
+          "text": "que tal"
         },
         {
           "text": "buenos dias"
