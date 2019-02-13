@@ -12,6 +12,24 @@
         }
       ],
       "description": "variable para detectar saludos"
+    },
+    {
+      "intent": "nombre",
+      "examples": [
+        {
+          "text": "como te llamas"
+        },
+        {
+          "text": "cual es tu nombre"
+        },
+        {
+          "text": "dime tu nombre"
+        },
+        {
+          "text": "por favor dame tu nombre"
+        }
+      ],
+      "description": "variable para detectar intenciones de nombre"
     }
   ],
   "entities": [
