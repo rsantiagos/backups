@@ -12,6 +12,9 @@
         },
         {
           "text": "como te llamas"
+        },
+        {
+          "text": "que me cuentas"
         }
       ],
       "description": "variable para detectar saludos"
