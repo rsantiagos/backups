@@ -1,0 +1,114 @@
+{
+  "name": "chio",
+  "intents": [
+    {
+      "intent": "saludo",
+      "examples": [
+        {
+          "text": "que tal"
+        },
+        {
+          "text": "buenos dias"
+        },
+        {
+          "text": "como te llamas"
+        }
+      ],
+      "description": "variable para detectar saludos"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "saludo",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "hola",
+          "synonyms": [
+            "hi",
+            "hello",
+            "que onda",
+            "que pedo"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "es",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "En otras cosas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿Puede expresarse con otras palabras? No le he entendido."
+              },
+              {
+                "text": "No entendí el significado."
+              },
+              {
+                "text": "Discúlpame, no soy un humano así que no puede contestarte correctamente."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "En otras cosas",
+      "previous_sibling": "Bienvenido"
+    },
+    {
+      "type": "standard",
+      "title": "Bienvenido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hola. "
+              },
+              {
+                "text": "¿que tal?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome || #saludo || @saludo",
+      "dialog_node": "Bienvenido"
+    }
+  ],
+  "workspace_id": "58d5eb77-e971-41b6-be91-ad827d0e408e",
+  "counterexamples": [
+    {
+      "text": "como te llamas"
+    },
+    {
+      "text": "muy bien"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
