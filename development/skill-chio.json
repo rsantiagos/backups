@@ -24,6 +24,9 @@
         },
         {
           "text": "dime tu nombre"
+        },
+        {
+          "text": "por favor dame tu nombre"
         }
       ],
       "description": "variable para detectar intenciones de nombre"
