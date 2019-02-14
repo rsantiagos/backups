@@ -21,6 +21,9 @@
         },
         {
           "text": "quiero saber tu nombre"
+        },
+        {
+          "text": "cual es tu nombre completo"
         }
       ],
       "description": "intenciones para preguntar nombre"
@@ -134,5 +137,5 @@
     }
   },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
