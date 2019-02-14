@@ -178,6 +178,9 @@
               },
               {
                 "text": "¿Cuantos crees?"
+              },
+              {
+                "text": ":) me sonrojas, ¿cuantos crees?"
               }
             ],
             "response_type": "text",
