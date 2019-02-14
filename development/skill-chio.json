@@ -350,7 +350,7 @@
         ]
       },
       "metadata": {},
-      "conditions": "welcome || #saludo || @saludo || #ask_age || #ask_feel || #ask_name",
+      "conditions": "welcome || #saludo || @saludo || #ask_age || #ask_feel || #ask_name || #ask_origin",
       "dialog_node": "Bienvenido"
     }
   ],
