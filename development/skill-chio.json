@@ -50,6 +50,9 @@
           "text": "que tal"
         },
         {
+          "text": "como has estado"
+        },
+        {
           "text": "como estas"
         },
         {
@@ -155,5 +158,5 @@
     }
   },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
