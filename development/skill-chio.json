@@ -339,6 +339,9 @@
               },
               {
                 "text": "Hi"
+              },
+              {
+                "text": "que hay"
               }
             ],
             "response_type": "text",
