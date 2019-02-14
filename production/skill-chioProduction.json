@@ -20,10 +20,10 @@
       "intent": "saludo",
       "examples": [
         {
-          "text": "que tal"
+          "text": "Hey"
         },
         {
-          "text": "Hey"
+          "text": "que tal"
         },
         {
           "text": "que hay"
@@ -32,28 +32,40 @@
       "description": "variable para detectar saludos"
     },
     {
+      "intent": "ask_origin",
+      "examples": [
+        {
+          "text": "de donde eres"
+        },
+        {
+          "text": "donde naciste"
+        }
+      ],
+      "description": "intenciones para preguntar ciudad de origen"
+    },
+    {
       "intent": "ask_name",
       "examples": [
         {
-          "text": "cual es tu nombre completo"
-        },
-        {
           "text": "quiero saber tu nombre"
-        },
-        {
-          "text": "dame tu nombre"
         },
         {
           "text": "dime tu nombre"
         },
         {
-          "text": "quien eres"
+          "text": "cual es tu nombre completo"
+        },
+        {
+          "text": "como te llamas"
         },
         {
           "text": "me puedes decir tu nombre"
         },
         {
-          "text": "como te llamas"
+          "text": "quien eres"
+        },
+        {
+          "text": "dame tu nombre"
         }
       ],
       "description": "intenciones para preguntar nombre"
@@ -62,34 +74,22 @@
       "intent": "ask_feel",
       "examples": [
         {
+          "text": "que tal"
+        },
+        {
           "text": "how are you"
+        },
+        {
+          "text": "como has estado"
         },
         {
           "text": "como estas"
         },
         {
           "text": "que tal te va"
-        },
-        {
-          "text": "que tal"
-        },
-        {
-          "text": "como has estado"
         }
       ],
       "description": "intenciones para preguntar estados de animo"
-    },
-    {
-      "intent": "ask_origin",
-      "examples": [
-        {
-          "text": "donde naciste"
-        },
-        {
-          "text": "de donde eres"
-        }
-      ],
-      "description": "intenciones para preguntar ciudad de origen"
     }
   ],
   "entities": [
@@ -132,16 +132,16 @@
   "dialog_nodes": [
     {
       "type": "standard",
-      "title": "PRE- pregunta nombre",
+      "title": "RES - origen",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "y tu, ¿como te llamas?"
+                "text": "Yo soy de Oaxaca"
               },
               {
-                "text": "y tu, ¿quien eres?"
+                "text": "De Oaxaca"
               }
             ],
             "response_type": "text",
@@ -149,9 +149,11 @@
           }
         ]
       },
-      "parent": "node_3_1550166788162",
+      "parent": "Bienvenido",
       "metadata": {},
-      "dialog_node": "node_4_1550167539337"
+      "conditions": "#ask_origin",
+      "dialog_node": "node_7_1550179946224",
+      "previous_sibling": "node_6_1550178181338"
     },
     {
       "type": "standard",
@@ -183,31 +185,6 @@
       "conditions": "#ask_age",
       "dialog_node": "node_6_1550178181338",
       "previous_sibling": "node_3_1550166788162"
-    },
-    {
-      "type": "standard",
-      "title": "RES - origen",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Yo soy de Oaxaca"
-              },
-              {
-                "text": "De Oaxaca"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "conditions": "#ask_origin",
-      "dialog_node": "node_7_1550179946224",
-      "previous_sibling": "node_6_1550178181338"
     },
     {
       "type": "standard",
@@ -276,6 +253,29 @@
       },
       "conditions": "#ask_feel",
       "dialog_node": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
+      "title": "PRE- pregunta nombre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "y tu, ¿como te llamas?"
+              },
+              {
+                "text": "y tu, ¿quien eres?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1550166788162",
+      "metadata": {},
+      "dialog_node": "node_4_1550167539337"
     },
     {
       "type": "standard",
