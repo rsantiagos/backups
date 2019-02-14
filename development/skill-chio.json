@@ -325,7 +325,7 @@
         ]
       },
       "metadata": {},
-      "conditions": "welcome || #saludo || @saludo && #ask_age",
+      "conditions": "welcome || #saludo || @saludo || #ask_age || #ask_feel",
       "dialog_node": "Bienvenido"
     }
   ],
