@@ -132,6 +132,31 @@
   "dialog_nodes": [
     {
       "type": "standard",
+      "title": "RES - origen",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yo soy de Oaxaca"
+              },
+              {
+                "text": "De Oaxaca"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_origin",
+      "dialog_node": "node_7_1550179946224",
+      "previous_sibling": "node_6_1550178181338"
+    },
+    {
+      "type": "standard",
       "title": "RES - Pregunta nombre",
       "output": {
         "generic": [
