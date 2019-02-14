@@ -11,7 +11,10 @@
           "text": "buenos dias"
         },
         {
-          "text": "como te llamas"
+          "text": "que hay"
+        },
+        {
+          "text": "sigues ahi"
         }
       ],
       "description": "variable para detectar saludos"
