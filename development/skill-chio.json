@@ -42,6 +42,21 @@
         }
       ],
       "description": "variable para detectar saludos"
+    },
+    {
+      "intent": "ask_feel",
+      "examples": [
+        {
+          "text": "como estas"
+        },
+        {
+          "text": "que tal te va"
+        },
+        {
+          "text": "how are you"
+        }
+      ],
+      "description": "intenciones para preguntar estados de animo"
     }
   ],
   "entities": [
@@ -137,5 +152,5 @@
     }
   },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
