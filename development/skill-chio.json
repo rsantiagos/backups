@@ -148,6 +148,12 @@
               },
               {
                 "text": "Excelente, gracias a dios"
+              },
+              {
+                "text": "Fantastico!"
+              },
+              {
+                "text": "No me puedo quejar, me ha ido bien!"
               }
             ],
             "response_type": "text",
@@ -174,6 +180,9 @@
             "values": [
               {
                 "text": "¿y tu como has estado?"
+              },
+              {
+                "text": "¿y tu, como estas?"
               }
             ],
             "response_type": "text",
