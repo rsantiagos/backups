@@ -94,6 +94,29 @@
   "dialog_nodes": [
     {
       "type": "standard",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien, gracias"
+              },
+              {
+                "text": "Excelente, gracias a dios"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_feel",
+      "dialog_node": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
       "title": "En otras cosas",
       "output": {
         "generic": [
