@@ -94,6 +94,34 @@
   "dialog_nodes": [
     {
       "type": "standard",
+      "title": "RES - Pregunta nombre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Mi creador me llama Chio"
+              },
+              {
+                "text": "Mi nombre es Zinai "
+              },
+              {
+                "text": "Yo soy Zinai"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_name",
+      "dialog_node": "node_3_1550166788162",
+      "previous_sibling": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
       "title": "RES - pregunta estado de animo",
       "output": {
         "generic": [
@@ -151,10 +179,13 @@
           {
             "values": [
               {
-                "text": "Hola. "
+                "text": "Hola"
               },
               {
-                "text": "¿que tal?"
+                "text": "Hello"
+              },
+              {
+                "text": "Hi"
               }
             ],
             "response_type": "text",
