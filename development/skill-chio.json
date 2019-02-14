@@ -33,6 +33,9 @@
         },
         {
           "text": "que hay"
+        },
+        {
+          "text": "Hey"
         }
       ],
       "description": "variable para detectar saludos"
