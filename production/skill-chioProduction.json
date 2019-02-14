@@ -1,0 +1,36 @@
+{
+  "name": "chioProduction",
+  "intents": [
+    {
+      "intent": "saludo",
+      "examples": [
+        {
+          "text": "hola"
+        },
+        {
+          "text": "que tal"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "language": "es",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [],
+  "workspace_id": "1bdba598-a3c6-4718-929c-36654b9f79b8",
+  "counterexamples": [],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
