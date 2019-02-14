@@ -116,6 +116,11 @@
       },
       "parent": "Bienvenido",
       "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1550167539337"
+      },
       "conditions": "#ask_name",
       "dialog_node": "node_3_1550166788162",
       "previous_sibling": "node_2_1550164401954"
@@ -143,6 +148,29 @@
       "metadata": {},
       "conditions": "#ask_feel",
       "dialog_node": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
+      "title": "PRE- pregunta nombre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "y tu, ¿como te llamas?"
+              },
+              {
+                "text": "y tu, ¿quien eres?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_3_1550166788162",
+      "metadata": {},
+      "dialog_node": "node_4_1550167539337"
     },
     {
       "type": "standard",
