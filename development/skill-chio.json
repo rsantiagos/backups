@@ -20,7 +20,7 @@
       "intent": "ask_name",
       "examples": [
         {
-          "text": "quien eres"
+          "text": "dime tu nombre"
         },
         {
           "text": "dame tu nombre"
@@ -38,10 +38,22 @@
           "text": "me puedes decir tu nombre"
         },
         {
-          "text": "dime tu nombre"
+          "text": "quien eres"
         }
       ],
       "description": "intenciones para preguntar nombre"
+    },
+    {
+      "intent": "ask_origin",
+      "examples": [
+        {
+          "text": "donde naciste"
+        },
+        {
+          "text": "de donde eres"
+        }
+      ],
+      "description": "intenciones para preguntar ciudad de origen"
     },
     {
       "intent": "saludo",
@@ -301,5 +313,5 @@
     }
   },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
