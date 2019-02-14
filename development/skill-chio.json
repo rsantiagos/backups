@@ -157,8 +157,33 @@
       },
       "parent": "Bienvenido",
       "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1550170470304"
+      },
       "conditions": "#ask_feel",
       "dialog_node": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
+      "title": "PRE - estado de animo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿y tu como has estado?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1550164401954",
+      "metadata": {},
+      "dialog_node": "node_5_1550170470304"
     },
     {
       "type": "standard",
