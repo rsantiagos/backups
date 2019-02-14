@@ -94,6 +94,7 @@
   "dialog_nodes": [
     {
       "type": "standard",
+      "title": "RES - pregunta estado de animo",
       "output": {
         "generic": [
           {
