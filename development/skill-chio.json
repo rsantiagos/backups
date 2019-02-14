@@ -67,6 +67,17 @@
   ],
   "entities": [
     {
+      "entity": "res_continues",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "y tu",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
       "entity": "saludo",
       "values": [
         {
