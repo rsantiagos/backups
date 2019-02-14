@@ -2,17 +2,23 @@
   "name": "chio",
   "intents": [
     {
-      "intent": "ask_name",
+      "intent": "ask_age",
       "examples": [
         {
-          "text": "como te llamas"
+          "text": "Cuantos años tienes"
         },
         {
-          "text": "me puedes decir tu nombre"
+          "text": "cual es tu edad"
         },
         {
-          "text": "dime tu nombre"
-        },
+          "text": "que edad tienes"
+        }
+      ],
+      "description": "intenciones para preguntar edad"
+    },
+    {
+      "intent": "ask_name",
+      "examples": [
         {
           "text": "quien eres"
         },
@@ -24,6 +30,15 @@
         },
         {
           "text": "cual es tu nombre completo"
+        },
+        {
+          "text": "como te llamas"
+        },
+        {
+          "text": "me puedes decir tu nombre"
+        },
+        {
+          "text": "dime tu nombre"
         }
       ],
       "description": "intenciones para preguntar nombre"
@@ -47,19 +62,19 @@
       "intent": "ask_feel",
       "examples": [
         {
-          "text": "que tal"
-        },
-        {
-          "text": "como has estado"
-        },
-        {
-          "text": "como estas"
+          "text": "how are you"
         },
         {
           "text": "que tal te va"
         },
         {
-          "text": "how are you"
+          "text": "como estas"
+        },
+        {
+          "text": "como has estado"
+        },
+        {
+          "text": "que tal"
         }
       ],
       "description": "intenciones para preguntar estados de animo"
