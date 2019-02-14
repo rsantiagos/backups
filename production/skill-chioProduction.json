@@ -2,38 +2,38 @@
   "name": "chioProduction",
   "intents": [
     {
+      "intent": "ask_age",
+      "examples": [
+        {
+          "text": "que edad tienes"
+        },
+        {
+          "text": "cual es tu edad"
+        },
+        {
+          "text": "Cuantos años tienes"
+        }
+      ],
+      "description": "intenciones para preguntar edad"
+    },
+    {
       "intent": "saludo",
       "examples": [
         {
-          "text": "que hay"
+          "text": "que tal"
         },
         {
           "text": "Hey"
         },
         {
-          "text": "que tal"
+          "text": "que hay"
         }
       ],
       "description": "variable para detectar saludos"
     },
     {
-      "intent": "ask_origin",
-      "examples": [
-        {
-          "text": "donde naciste"
-        },
-        {
-          "text": "de donde eres"
-        }
-      ],
-      "description": "intenciones para preguntar ciudad de origen"
-    },
-    {
       "intent": "ask_name",
       "examples": [
-        {
-          "text": "como te llamas"
-        },
         {
           "text": "cual es tu nombre completo"
         },
@@ -51,6 +51,9 @@
         },
         {
           "text": "me puedes decir tu nombre"
+        },
+        {
+          "text": "como te llamas"
         }
       ],
       "description": "intenciones para preguntar nombre"
@@ -62,9 +65,6 @@
           "text": "how are you"
         },
         {
-          "text": "como has estado"
-        },
-        {
           "text": "como estas"
         },
         {
@@ -72,38 +72,27 @@
         },
         {
           "text": "que tal"
+        },
+        {
+          "text": "como has estado"
         }
       ],
       "description": "intenciones para preguntar estados de animo"
     },
     {
-      "intent": "ask_age",
+      "intent": "ask_origin",
       "examples": [
         {
-          "text": "Cuantos años tienes"
+          "text": "donde naciste"
         },
         {
-          "text": "cual es tu edad"
-        },
-        {
-          "text": "que edad tienes"
+          "text": "de donde eres"
         }
       ],
-      "description": "intenciones para preguntar edad"
+      "description": "intenciones para preguntar ciudad de origen"
     }
   ],
   "entities": [
-    {
-      "entity": "res_continues",
-      "values": [
-        {
-          "type": "synonyms",
-          "value": "y tu",
-          "synonyms": []
-        }
-      ],
-      "fuzzy_match": true
-    },
     {
       "entity": "saludo",
       "values": [
@@ -116,6 +105,17 @@
             "que onda",
             "que pedo"
           ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "res_continues",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "y tu",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -132,16 +132,16 @@
   "dialog_nodes": [
     {
       "type": "standard",
-      "title": "PRE - estado de animo",
+      "title": "PRE- pregunta nombre",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "¿y tu como has estado?"
+                "text": "y tu, ¿como te llamas?"
               },
               {
-                "text": "¿y tu, como estas?"
+                "text": "y tu, ¿quien eres?"
               }
             ],
             "response_type": "text",
@@ -149,9 +149,65 @@
           }
         ]
       },
-      "parent": "node_2_1550164401954",
+      "parent": "node_3_1550166788162",
       "metadata": {},
-      "dialog_node": "node_5_1550170470304"
+      "dialog_node": "node_4_1550167539337"
+    },
+    {
+      "type": "standard",
+      "title": "PREG- respuesta edad",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ":) ¿De cuantos me veo?"
+              },
+              {
+                "text": "Adivina?"
+              },
+              {
+                "text": "¿Cuantos crees?"
+              },
+              {
+                "text": ":) me sonrojas, ¿cuantos crees?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_age",
+      "dialog_node": "node_6_1550178181338",
+      "previous_sibling": "node_3_1550166788162"
+    },
+    {
+      "type": "standard",
+      "title": "RES - origen",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yo soy de Oaxaca"
+              },
+              {
+                "text": "De Oaxaca"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_origin",
+      "dialog_node": "node_7_1550179946224",
+      "previous_sibling": "node_6_1550178181338"
     },
     {
       "type": "standard",
@@ -185,62 +241,6 @@
       "conditions": "#ask_name",
       "dialog_node": "node_3_1550166788162",
       "previous_sibling": "node_2_1550164401954"
-    },
-    {
-      "type": "standard",
-      "title": "RES - origen",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Yo soy de Oaxaca"
-              },
-              {
-                "text": "De Oaxaca"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "conditions": "#ask_origin",
-      "dialog_node": "node_7_1550179946224",
-      "previous_sibling": "node_6_1550178181338"
-    },
-    {
-      "type": "standard",
-      "title": "PREG- respuesta edad",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": ":) ¿De cuantos me veo?"
-              },
-              {
-                "text": "Adivina?"
-              },
-              {
-                "text": "¿Cuantos crees?"
-              },
-              {
-                "text": ":) me sonrojas, ¿cuantos crees?"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "conditions": "#ask_age",
-      "dialog_node": "node_6_1550178181338",
-      "previous_sibling": "node_3_1550166788162"
     },
     {
       "type": "standard",
@@ -279,16 +279,16 @@
     },
     {
       "type": "standard",
-      "title": "PRE- pregunta nombre",
+      "title": "PRE - estado de animo",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "y tu, ¿como te llamas?"
+                "text": "¿y tu como has estado?"
               },
               {
-                "text": "y tu, ¿quien eres?"
+                "text": "¿y tu, como estas?"
               }
             ],
             "response_type": "text",
@@ -296,9 +296,9 @@
           }
         ]
       },
-      "parent": "node_3_1550166788162",
+      "parent": "node_2_1550164401954",
       "metadata": {},
-      "dialog_node": "node_4_1550167539337"
+      "dialog_node": "node_5_1550170470304"
     },
     {
       "type": "standard",
@@ -307,9 +307,6 @@
         "generic": [
           {
             "values": [
-              {
-                "text": "¿Puede expresarse con otras palabras? No le he entendido."
-              },
               {
                 "text": "No entendí el significado."
               },
@@ -350,7 +347,7 @@
         ]
       },
       "metadata": {},
-      "conditions": "welcome || #saludo || @saludo || #ask_age || #ask_feel || #ask_name || #ask_origin",
+      "conditions": "welcome || #saludo || @saludo",
       "dialog_node": "Bienvenido"
     }
   ],
