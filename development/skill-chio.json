@@ -2,19 +2,37 @@
   "name": "chio",
   "intents": [
     {
+      "intent": "ask_name",
+      "examples": [
+        {
+          "text": "como te llamas"
+        },
+        {
+          "text": "me puedes decir tu nombre"
+        },
+        {
+          "text": "dime tu nombre"
+        },
+        {
+          "text": "quien eres"
+        },
+        {
+          "text": "dame tu nombre"
+        },
+        {
+          "text": "quiero saber tu nombre"
+        }
+      ],
+      "description": "intenciones para preguntar nombre"
+    },
+    {
       "intent": "saludo",
       "examples": [
         {
           "text": "que tal"
         },
         {
-          "text": "buenos dias"
-        },
-        {
           "text": "que hay"
-        },
-        {
-          "text": "sigues ahi"
         }
       ],
       "description": "variable para detectar saludos"
@@ -113,5 +131,5 @@
     }
   },
   "learning_opt_out": false,
-  "status": "Available"
+  "status": "Training"
 }
