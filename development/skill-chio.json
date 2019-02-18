@@ -132,130 +132,6 @@
   "dialog_nodes": [
     {
       "type": "standard",
-      "title": "RES - origen",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Yo soy de Oaxaca"
-              },
-              {
-                "text": "De Oaxaca"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "conditions": "#ask_origin",
-      "dialog_node": "node_7_1550179946224",
-      "previous_sibling": "node_6_1550178181338"
-    },
-    {
-      "type": "standard",
-      "title": "RES - Pregunta nombre",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Mi creador me llama Chio"
-              },
-              {
-                "text": "Mi nombre es Zinai "
-              },
-              {
-                "text": "Yo soy Zinai"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "body",
-        "dialog_node": "node_4_1550167539337"
-      },
-      "conditions": "#ask_name",
-      "dialog_node": "node_3_1550166788162",
-      "previous_sibling": "node_2_1550164401954"
-    },
-    {
-      "type": "standard",
-      "title": "PREG- respuesta edad",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": ":) ¿De cuantos me veo?"
-              },
-              {
-                "text": "Adivina?"
-              },
-              {
-                "text": "¿Cuantos crees?"
-              },
-              {
-                "text": ":) me sonrojas, ¿cuantos crees?"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "conditions": "#ask_age",
-      "dialog_node": "node_6_1550178181338",
-      "previous_sibling": "node_3_1550166788162"
-    },
-    {
-      "type": "standard",
-      "title": "RES - pregunta estado de animo",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "Muy bien, gracias"
-              },
-              {
-                "text": "Excelente, gracias a dios"
-              },
-              {
-                "text": "Fantastico!"
-              },
-              {
-                "text": "No me puedo quejar, me ha ido bien!"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "Bienvenido",
-      "metadata": {},
-      "next_step": {
-        "behavior": "jump_to",
-        "selector": "body",
-        "dialog_node": "node_5_1550170470304"
-      },
-      "conditions": "#ask_feel",
-      "dialog_node": "node_2_1550164401954"
-    },
-    {
-      "type": "standard",
       "title": "PRE - estado de animo",
       "output": {
         "generic": [
@@ -302,6 +178,95 @@
     },
     {
       "type": "standard",
+      "title": "PREG- respuesta edad",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": ":) ¿De cuantos me veo?"
+              },
+              {
+                "text": "Adivina?"
+              },
+              {
+                "text": "¿Cuantos crees?"
+              },
+              {
+                "text": ":) me sonrojas, ¿cuantos crees?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#ask_age",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_6_1550178181338",
+      "previous_sibling": "node_7_1550179946224"
+    },
+    {
+      "type": "standard",
+      "title": "RES - Pregunta nombre",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Mi creador me llama Chio"
+              },
+              {
+                "text": "Mi nombre es Zinai "
+              },
+              {
+                "text": "Yo soy Zinai"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_4_1550167539337"
+      },
+      "conditions": "#ask_name",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_3_1550166788162",
+      "previous_sibling": "node_6_1550178181338"
+    },
+    {
+      "type": "standard",
+      "title": "RES - origen",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yo soy de Oaxaca"
+              },
+              {
+                "text": "De Oaxaca"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#ask_origin",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_7_1550179946224",
+      "previous_sibling": "Bienvenido"
+    },
+    {
+      "type": "standard",
       "title": "En otras cosas",
       "output": {
         "generic": [
@@ -322,7 +287,43 @@
       "metadata": {},
       "conditions": "anything_else",
       "dialog_node": "En otras cosas",
-      "previous_sibling": "Bienvenido"
+      "previous_sibling": "node_2_1550164401954"
+    },
+    {
+      "type": "standard",
+      "title": "RES - pregunta estado de animo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien, gracias"
+              },
+              {
+                "text": "Excelente, gracias a dios"
+              },
+              {
+                "text": "Fantastico!"
+              },
+              {
+                "text": "No me puedo quejar, me ha ido bien!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_5_1550170470304"
+      },
+      "conditions": "#ask_feel",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1550164401954",
+      "previous_sibling": "node_3_1550166788162"
     },
     {
       "type": "standard",
