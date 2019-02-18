@@ -2,6 +2,60 @@
   "name": "chioProduction",
   "intents": [
     {
+      "intent": "saludo",
+      "examples": [
+        {
+          "text": "que hay"
+        },
+        {
+          "text": "que tal"
+        },
+        {
+          "text": "Hey"
+        }
+      ],
+      "description": "variable para detectar saludos"
+    },
+    {
+      "intent": "ask_name",
+      "examples": [
+        {
+          "text": "quien eres"
+        },
+        {
+          "text": "me puedes decir tu nombre"
+        },
+        {
+          "text": "como te llamas"
+        },
+        {
+          "text": "cual es tu nombre completo"
+        },
+        {
+          "text": "quiero saber tu nombre"
+        },
+        {
+          "text": "dame tu nombre"
+        },
+        {
+          "text": "dime tu nombre"
+        }
+      ],
+      "description": "intenciones para preguntar nombre"
+    },
+    {
+      "intent": "ask_origin",
+      "examples": [
+        {
+          "text": "de donde eres"
+        },
+        {
+          "text": "donde naciste"
+        }
+      ],
+      "description": "intenciones para preguntar ciudad de origen"
+    },
+    {
       "intent": "ask_age",
       "examples": [
         {
@@ -17,67 +71,10 @@
       "description": "intenciones para preguntar edad"
     },
     {
-      "intent": "saludo",
-      "examples": [
-        {
-          "text": "Hey"
-        },
-        {
-          "text": "que tal"
-        },
-        {
-          "text": "que hay"
-        }
-      ],
-      "description": "variable para detectar saludos"
-    },
-    {
-      "intent": "ask_origin",
-      "examples": [
-        {
-          "text": "de donde eres"
-        },
-        {
-          "text": "donde naciste"
-        }
-      ],
-      "description": "intenciones para preguntar ciudad de origen"
-    },
-    {
-      "intent": "ask_name",
-      "examples": [
-        {
-          "text": "quiero saber tu nombre"
-        },
-        {
-          "text": "dime tu nombre"
-        },
-        {
-          "text": "cual es tu nombre completo"
-        },
-        {
-          "text": "como te llamas"
-        },
-        {
-          "text": "me puedes decir tu nombre"
-        },
-        {
-          "text": "quien eres"
-        },
-        {
-          "text": "dame tu nombre"
-        }
-      ],
-      "description": "intenciones para preguntar nombre"
-    },
-    {
       "intent": "ask_feel",
       "examples": [
         {
           "text": "que tal"
-        },
-        {
-          "text": "how are you"
         },
         {
           "text": "como has estado"
@@ -87,6 +84,9 @@
         },
         {
           "text": "que tal te va"
+        },
+        {
+          "text": "how are you"
         }
       ],
       "description": "intenciones para preguntar estados de animo"
@@ -132,16 +132,16 @@
   "dialog_nodes": [
     {
       "type": "standard",
-      "title": "RES - origen",
+      "title": "PRE- pregunta nombre",
       "output": {
         "generic": [
           {
             "values": [
               {
-                "text": "Yo soy de Oaxaca"
+                "text": "y tu, ¿como te llamas?"
               },
               {
-                "text": "De Oaxaca"
+                "text": "y tu, ¿quien eres?"
               }
             ],
             "response_type": "text",
@@ -149,11 +149,9 @@
           }
         ]
       },
-      "parent": "Bienvenido",
+      "parent": "node_3_1550166788162",
       "metadata": {},
-      "conditions": "#ask_origin",
-      "dialog_node": "node_7_1550179946224",
-      "previous_sibling": "node_6_1550178181338"
+      "dialog_node": "node_4_1550167539337"
     },
     {
       "type": "standard",
@@ -221,6 +219,31 @@
     },
     {
       "type": "standard",
+      "title": "RES - origen",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Yo soy de Oaxaca"
+              },
+              {
+                "text": "De Oaxaca"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Bienvenido",
+      "metadata": {},
+      "conditions": "#ask_origin",
+      "dialog_node": "node_7_1550179946224",
+      "previous_sibling": "node_6_1550178181338"
+    },
+    {
+      "type": "standard",
       "title": "RES - pregunta estado de animo",
       "output": {
         "generic": [
@@ -253,29 +276,6 @@
       },
       "conditions": "#ask_feel",
       "dialog_node": "node_2_1550164401954"
-    },
-    {
-      "type": "standard",
-      "title": "PRE- pregunta nombre",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "y tu, ¿como te llamas?"
-              },
-              {
-                "text": "y tu, ¿quien eres?"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "node_3_1550166788162",
-      "metadata": {},
-      "dialog_node": "node_4_1550167539337"
     },
     {
       "type": "standard",
@@ -339,6 +339,9 @@
               },
               {
                 "text": "Hi"
+              },
+              {
+                "text": "que hay"
               }
             ],
             "response_type": "text",
