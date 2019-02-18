@@ -2,48 +2,6 @@
   "name": "chioProduction",
   "intents": [
     {
-      "intent": "saludo",
-      "examples": [
-        {
-          "text": "que hay"
-        },
-        {
-          "text": "que tal"
-        },
-        {
-          "text": "Hey"
-        }
-      ],
-      "description": "variable para detectar saludos"
-    },
-    {
-      "intent": "ask_name",
-      "examples": [
-        {
-          "text": "quien eres"
-        },
-        {
-          "text": "me puedes decir tu nombre"
-        },
-        {
-          "text": "como te llamas"
-        },
-        {
-          "text": "cual es tu nombre completo"
-        },
-        {
-          "text": "quiero saber tu nombre"
-        },
-        {
-          "text": "dame tu nombre"
-        },
-        {
-          "text": "dime tu nombre"
-        }
-      ],
-      "description": "intenciones para preguntar nombre"
-    },
-    {
       "intent": "ask_origin",
       "examples": [
         {
@@ -56,23 +14,11 @@
       "description": "intenciones para preguntar ciudad de origen"
     },
     {
-      "intent": "ask_age",
-      "examples": [
-        {
-          "text": "que edad tienes"
-        },
-        {
-          "text": "cual es tu edad"
-        },
-        {
-          "text": "Cuantos años tienes"
-        }
-      ],
-      "description": "intenciones para preguntar edad"
-    },
-    {
       "intent": "ask_feel",
       "examples": [
+        {
+          "text": "how are you"
+        },
         {
           "text": "que tal"
         },
@@ -84,12 +30,66 @@
         },
         {
           "text": "que tal te va"
-        },
-        {
-          "text": "how are you"
         }
       ],
       "description": "intenciones para preguntar estados de animo"
+    },
+    {
+      "intent": "saludo",
+      "examples": [
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "que tal"
+        },
+        {
+          "text": "que hay"
+        }
+      ],
+      "description": "variable para detectar saludos"
+    },
+    {
+      "intent": "ask_name",
+      "examples": [
+        {
+          "text": "cual es tu nombre completo"
+        },
+        {
+          "text": "dame tu nombre"
+        },
+        {
+          "text": "dime tu nombre"
+        },
+        {
+          "text": "me puedes decir tu nombre"
+        },
+        {
+          "text": "como te llamas"
+        },
+        {
+          "text": "quiero saber tu nombre"
+        },
+        {
+          "text": "quien eres"
+        }
+      ],
+      "description": "intenciones para preguntar nombre"
+    },
+    {
+      "intent": "ask_age",
+      "examples": [
+        {
+          "text": "cual es tu edad"
+        },
+        {
+          "text": "Cuantos años tienes"
+        },
+        {
+          "text": "que edad tienes"
+        }
+      ],
+      "description": "intenciones para preguntar edad"
     }
   ],
   "entities": [
@@ -155,6 +155,29 @@
     },
     {
       "type": "standard",
+      "title": "PRE - estado de animo",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿y tu como has estado?"
+              },
+              {
+                "text": "¿y tu, como estas?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1550164401954",
+      "metadata": {},
+      "dialog_node": "node_5_1550170470304"
+    },
+    {
+      "type": "standard",
       "title": "PREG- respuesta edad",
       "output": {
         "generic": [
@@ -178,11 +201,11 @@
           }
         ]
       },
-      "parent": "Bienvenido",
       "metadata": {},
       "conditions": "#ask_age",
+      "digress_in": "does_not_return",
       "dialog_node": "node_6_1550178181338",
-      "previous_sibling": "node_3_1550166788162"
+      "previous_sibling": "node_7_1550179946224"
     },
     {
       "type": "standard",
@@ -206,7 +229,6 @@
           }
         ]
       },
-      "parent": "Bienvenido",
       "metadata": {},
       "next_step": {
         "behavior": "jump_to",
@@ -214,8 +236,9 @@
         "dialog_node": "node_4_1550167539337"
       },
       "conditions": "#ask_name",
+      "digress_in": "does_not_return",
       "dialog_node": "node_3_1550166788162",
-      "previous_sibling": "node_2_1550164401954"
+      "previous_sibling": "node_6_1550178181338"
     },
     {
       "type": "standard",
@@ -236,11 +259,11 @@
           }
         ]
       },
-      "parent": "Bienvenido",
       "metadata": {},
       "conditions": "#ask_origin",
+      "digress_in": "does_not_return",
       "dialog_node": "node_7_1550179946224",
-      "previous_sibling": "node_6_1550178181338"
+      "previous_sibling": "Bienvenido"
     },
     {
       "type": "standard",
@@ -267,7 +290,6 @@
           }
         ]
       },
-      "parent": "Bienvenido",
       "metadata": {},
       "next_step": {
         "behavior": "jump_to",
@@ -275,30 +297,9 @@
         "dialog_node": "node_5_1550170470304"
       },
       "conditions": "#ask_feel",
-      "dialog_node": "node_2_1550164401954"
-    },
-    {
-      "type": "standard",
-      "title": "PRE - estado de animo",
-      "output": {
-        "generic": [
-          {
-            "values": [
-              {
-                "text": "¿y tu como has estado?"
-              },
-              {
-                "text": "¿y tu, como estas?"
-              }
-            ],
-            "response_type": "text",
-            "selection_policy": "sequential"
-          }
-        ]
-      },
-      "parent": "node_2_1550164401954",
-      "metadata": {},
-      "dialog_node": "node_5_1550170470304"
+      "digress_in": "does_not_return",
+      "dialog_node": "node_2_1550164401954",
+      "previous_sibling": "node_3_1550166788162"
     },
     {
       "type": "standard",
@@ -322,7 +323,7 @@
       "metadata": {},
       "conditions": "anything_else",
       "dialog_node": "En otras cosas",
-      "previous_sibling": "Bienvenido"
+      "previous_sibling": "node_2_1550164401954"
     },
     {
       "type": "standard",
